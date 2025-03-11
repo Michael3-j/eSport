@@ -16,7 +16,7 @@ def add_team():
 
 
 def add_player():
-    #playerS
+    #players
     """Add a new player to the database."""
     name = input("Enter player's name: ")
     game = input("Enter game: ")

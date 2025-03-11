@@ -13,7 +13,7 @@ def add_team(name):
     team = Team(name=name)
     session.add(team)
     session.commit()
-    print(f"Team '{name}' added successfully!")
+    print(f"Team '{name}' has been added successfully!")
 
 
 # Function to add a player and assign them to a team

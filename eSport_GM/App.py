@@ -68,17 +68,24 @@ def update_match_winner(match_id, winner_name):
     match.winner = winner
     session.commit()
 
-# Sample Data (For Testing)
+# Sample Data (For Testing the functionalities functions above ) 
+#Adding teams function
 add_team("Team KETA4")
 add_team("Team WTF")
 
+#Adding players function
 add_player("KETA4**Alice", "PUBG_MOBILE", "Team KETA4")
 add_player("KETA4**Bob", "PUBG_MOBILE", "Team KETA4")
 add_player("WTF^#Charlie", "PUBG_MOBILE", "Team WTF")
 
+#Function for listing  players by their team 
 list_team_players("Team KETA4")
 
+#Creating tournament function
 create_tournament("Spring Tournament", "Valorant")
 
+#Adding a match function
 add_match("KETA4**Alice", "WTF^#Charlie", "Spring Tournament")
-update_match_winner(1, "KETA4**Alice")  # Update match with winner
+
+# Update match with winner function
+update_match_winner(1, "KETA4**Alice")  

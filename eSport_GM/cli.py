@@ -3,6 +3,7 @@ from models import session, Team, Player, Tournament, Match  # Import database m
 
 
 def add_team():
+    #team
     """Add a new team to the database."""
     name = input("Enter team name: ")
     if session.query(Team).filter_by(name=name).first():
@@ -15,6 +16,7 @@ def add_team():
 
 
 def add_player():
+    #playerS
     """Add a new player to the database."""
     name = input("Enter player's name: ")
     game = input("Enter game: ")
@@ -27,6 +29,7 @@ def add_player():
 
 
 def add_tournament():
+    #tournamentS
     """Create a new tournament."""
     name = input("Enter tournament name: ")
     game = input("Enter game for the tournament: ")
@@ -40,6 +43,7 @@ def add_tournament():
 
 
 def add_match():
+    #matchS
     """Add a match between two players."""
     tournament_id = input("Enter tournament ID: ")
     player1_id = input("Enter Player 1 ID: ")
@@ -52,6 +56,7 @@ def add_match():
 
 
 def record_winner():
+    #winner_records
     """Update a match with the winner."""
     match_id = input("Enter match ID: ")
     winner_id = input("Enter winning player ID: ")
@@ -66,6 +71,7 @@ def record_winner():
 
 
 def list_teams():
+    #creating list for teams
     """List all teams."""
     teams = session.query(Team).all()
     if not teams:
@@ -76,6 +82,7 @@ def list_teams():
 
 
 def list_players_by_team():
+    #listing players by there teams
     """List all players in a specific team."""
     team_id = input("Enter team ID: ")
     players = session.query(Player).filter_by(team_id=int(team_id)).all()
@@ -89,6 +96,7 @@ def list_players_by_team():
 
 
 def list_tournaments():
+    #list for tornaments
     """List all tournaments."""
     tournaments = session.query(Tournament).all()
     if not tournaments:
@@ -99,6 +107,7 @@ def list_tournaments():
 
 
 def list_matches():
+    #list for matches
     """List all matches."""
     matches = session.query(Match).all()
     if not matches:
@@ -109,6 +118,7 @@ def list_matches():
 
 
 def main():
+    #cli interactive for users
     """Main CLI menu for eSports Tournament management."""
     while True:
         print("\n🎮 eSports Tournament 🎮")

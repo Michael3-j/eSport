@@ -20,7 +20,7 @@ def add_team(name):
 def add_player(name, game, team_name):
     team = session.query(Team).filter_by(name=team_name).first()
     if not team:
-        print("Team not found! Add the team first.")
+        print("Team not found!! Add the team first.")
         return
     player = Player(name=name, game=game, team=team)
     session.add(player)
@@ -30,7 +30,7 @@ def add_player(name, game, team_name):
 def list_team_players(team_name):
     team = session.query(Team).filter_by(name=team_name).first()
     if not team:
-        print("Team not found!")
+        print("Team not found!!")
         return
     print(f"Players in {team.name}:")
     for player in team.players:
@@ -49,7 +49,7 @@ def add_match(player1_name, player2_name, tournament_name):
     tournament = session.query(Tournament).filter_by(name=tournament_name).first()
 
     if not all([player1, player2, tournament]):
-        print("Player or Tournament not found!")
+        print("Player or Tournament not found!!")
         return
 
     match = Match(player1=player1, player2=player2, tournament=tournament)
@@ -62,7 +62,7 @@ def update_match_winner(match_id, winner_name):
     winner = session.query(Player).filter_by(name=winner_name).first()
 
     if not match or not winner:
-        print("Match or winner not found!")
+        print("Match or winner not found!!")
         return
 
     match.winner = winner

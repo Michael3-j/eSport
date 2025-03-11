@@ -6,8 +6,8 @@ Base = declarative_base()
 class Team(Base):
     __tablename__ = "teams"
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False, unique=True)
+    id = Column(Integer(), primary_key=True)
+    name = Column(String(), nullable=False, unique=True)
 
 # One-to-Many: A team can have multiple players
     players = relationship("Player", back_populates="team")
@@ -16,10 +16,10 @@ class Team(Base):
 class Player(Base):
     __tablename__ = "players"
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    game = Column(String, nullable=False)
-    team_id = Column(Integer, ForeignKey("teams.id"))
+    id = Column(Integer(), primary_key=True)
+    name = Column(String(), nullable=False)
+    game = Column(String(), nullable=False)
+    team_id = Column(Integer(), ForeignKey("teams.id"))
 
 # Many-to-One: A player belongs to one team
     team = relationship("Team", back_populates="players")
@@ -29,9 +29,9 @@ class Tournament(Base):
 
     __tablename__ = "tournaments"
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False, unique=True)
-    game = Column(String, nullable=False)
+    id = Column(Integer(), primary_key=True)
+    name = Column(String(), nullable=False, unique=True)
+    game = Column(String(), nullable=False)
 
 # One-to-Many: A tournament can have multiple matches
     matches = relationship("Match", back_populates="tournament")
@@ -39,11 +39,11 @@ class Tournament(Base):
 class Match(Base):
     __tablename__ = "matches"
 
-    id = Column(Integer, primary_key=True)
-    player1_id = Column(Integer, ForeignKey("players.id"), nullable=False)
-    player2_id = Column(Integer, ForeignKey("players.id"), nullable=False)
-    winner_id = Column(Integer, ForeignKey("players.id"), nullable=True)
-    tournament_id = Column(Integer, ForeignKey("tournaments.id"), nullable=False)
+    id = Column(Integer(), primary_key=True)
+    player1_id = Column(Integer(), ForeignKey("players.id"), nullable=False)
+    player2_id = Column(Integer(), ForeignKey("players.id"), nullable=False)
+    winner_id = Column(Integer(), ForeignKey("players.id"), nullable=True)
+    tournament_id = Column(Integer(), ForeignKey("tournaments.id"), nullable=False)
 
 
     # Many-to-One: A match belongs to one tournament
@@ -59,3 +59,6 @@ class Match(Base):
 # Create the SQLite database
 engine = create_engine("sqlite:///eSport.db")
 Base.metadata.create_all(engine)
+
+Session = sessionmaker(bind=engine)
+session = Session()

@@ -3,17 +3,17 @@ from models import session, Player, Team, Tournament, Match # Import database mo
 
 # Function to add a new team
 def add_team(name):
-    # Check if the team already exists
+    # Check if the team already exists using session.query().filter_by().first
     existing_team = session.query(Team).filter_by(name=name).first()
     if existing_team:
-        print(f"Team '{name}' already exists! Choose a different name.")
+        print(f"Team '{name}' already exists!! Choose a different name.")
         return
     
     # If the team does not exist, add it
     team = Team(name=name)
     session.add(team)
     session.commit()
-    print(f"Team '{name}' has been added successfully!")
+    print(f"Team '{name}' has been added successfully🥳!")
 
 
 # Function to add a player and assign them to a team

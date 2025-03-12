@@ -126,7 +126,7 @@ def main():
         print("1. 👫️Add Team👫️")
         print("2. 🤴️Add Player👸️")
         print("3. 🗡️ Add Tournament🀄️")
-        print("4. ⚔️Add Match🀄️")
+        print("4. ⚔️ Add Match🀄️")
         print("5. 🎮️Record Match Winner🏆️")
         print("6. ✴️List Teams✴️")
         print("7. ✴️List Players by Team✴️")

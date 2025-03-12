@@ -1,4 +1,4 @@
-# Functionalities 
+# Functionalities for the eSport Tournament system.
 from models import session, Player, Team, Tournament, Match # Import database models and session
 
 # Function to add a new team
@@ -13,7 +13,7 @@ def add_team(name):
     team = Team(name=name)
     session.add(team)
     session.commit()
-    print(f"Team '{name}' has been added successfully🥳!")
+    print(f"Team '{name}' has been added successfully🥳🥳!")
 
 
 # Function to add a player and assign them to a team

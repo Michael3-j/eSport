@@ -123,7 +123,7 @@ def main():
     #looping throught .
     while True:
         print("\n🎮 eSports Tournament 🎮")
-        print("🏆️The Future Of Gaming 🏅️")
+        print("🏆️The Future Of Gaming enter your choice below🏅️")
         print("1. 👫️Add Team👫️")
         print("2. 🤴️Add Player👸️")
         print("3. 🗡️ Add Tournament🀄️")
@@ -135,7 +135,7 @@ def main():
         print("9. 📃️List Matches📃️")
         print("10. Exit⛩️")
 
-        choice = input("\nEnter choice here: ")
+        choice = input("\n How may I help you today?: ")
         if choice == "1":
             add_team()
         elif choice == "2":
@@ -155,7 +155,7 @@ def main():
         elif choice == "9":
             list_matches()
         elif choice == "10":
-            print("Exiting...")
+            print("Exiting the system...")
             sys.exit()
         else:
             print("Invalid choice! Try again.")

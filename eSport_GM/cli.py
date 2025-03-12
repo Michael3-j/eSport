@@ -123,7 +123,7 @@ def main():
     #looping throught .
     while True:
         print("\n🎮 eSports Tournament 🎮")
-        print("🏆️The Future Of Gaming enter your choice below🏅️")
+        print("🏆️The Future Of Gaming. Enter your choice below🏅️")
         print("1. 👫️Add Team👫️")
         print("2. 🤴️Add Player👸️")
         print("3. 🗡️ Add Tournament🀄️")

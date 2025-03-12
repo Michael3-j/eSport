@@ -2,7 +2,7 @@ from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from sqlalchemy import Column, String, Integer, ForeignKey, create_engine
 
 Base = declarative_base()
-# 4 classes and tables.
+# 4_classes and tables.
 class Team(Base):
     __tablename__ = "teams"
 

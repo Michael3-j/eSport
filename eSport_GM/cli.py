@@ -120,6 +120,7 @@ def list_matches():
 def main():
     #cli interactive for users
     """Main CLI menu for eSports Tournament management."""
+    #looping throught .
     while True:
         print("\n🎮 eSports Tournament 🎮")
         print("🏆️The Future Of Gaming 🏅️")
@@ -134,7 +135,7 @@ def main():
         print("9. 📃️List Matches📃️")
         print("10. Exit⛩️")
 
-        choice = input("\nEnter choice: ")
+        choice = input("\nEnter choice here: ")
         if choice == "1":
             add_team()
         elif choice == "2":

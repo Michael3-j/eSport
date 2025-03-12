@@ -69,6 +69,7 @@ def update_match_winner(match_id, winner_name):
     session.commit()
 
 # Sample Data (For Testing the functionalities functions above ) 
+
 #Adding teams function
 add_team("Team KETA4")
 add_team("Team WTF")
